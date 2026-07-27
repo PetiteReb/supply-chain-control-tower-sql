@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16-alpine        # PostgreSQL 16, version légère
+    container_name: control_tower_db # nom lisible du conteneur
+    environment:                     # lues au TOUT PREMIER démarrage
+      POSTGRES_DB: control_tower      # nom de la base créée
+      POSTGRES_USER: analyst          # ton utilisateur
+      POSTGRES_PASSWORD: analyst      # ton mot de passe (projet perso, ok)
+    ports:
+      - "5432:5432"                  # gauche = ton PC, droite = conteneur
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # garde les données sur le disque
+    healthcheck:                     # docker teste si la base est prête
+      test: ["CMD-SHELL", "pg_isready -U analyst -d control_tower"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:                            # déclare le volume nommé ci-dessus
