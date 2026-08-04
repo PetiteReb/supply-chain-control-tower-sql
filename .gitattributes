@@ -1,0 +1,3 @@
+# Normalise les fins de ligne : LF dans le repo, natif au checkout.
+# → plus jamais de faux diffs CRLF/LF sous Windows.
+* text=auto
