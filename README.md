@@ -50,7 +50,7 @@ supply-chain-control-tower-sql/
 ## Roadmap
 
 - [x] **Environment**  PostgreSQL 16 in Docker, one-command setup
-- [x] **Staging layer** raw schema + `COPY` load with LATIN1 encoding handling — **180,519 rows loaded and verified**
+- [x] **Staging layer** raw schema + `COPY` load with LATIN1 encoding handling  **180,519 rows loaded and verified**
 - [ ] **Star schema**  `dim_date`, `dim_customer`, `dim_product`, `dim_geography`, `dim_shipping_mode`, `fact_order_items`
 - [ ] **Data quality checks** row counts, orphan keys, duplicates
 - [ ] **KPI queries**  on-time delivery %, real vs scheduled shipping days, profitability
@@ -64,7 +64,7 @@ supply-chain-control-tower-sql/
 docker compose up -d
 ```
 
-2. Create the staging schema — run `sql/01_schema/01_staging.sql` (e.g. in DBeaver, connected to `localhost:5544`, db `control_tower`).
+2. Create the staging schema  run `sql/01_schema/01_staging.sql` (e.g. in DBeaver, connected to `localhost:5544`, db `control_tower`).
 
 3. Load the raw data:
 
@@ -76,6 +76,6 @@ then run `sql/01_schema/02_load_staging.sql`.
 
 ## About Me
 
-**Rebecca Olivier** — Data & Analytics Consultant
+**Rebecca Olivier**  Data & Analytics Consultant
 Aerospace & supply chain background (Airbus, Bombardier, Thales) · relocating to Ontario, Canada 🇨🇦
 [LinkedIn](https://linkedin.com/in/rebeccaolivier-/) · rebecca.olivier28@gmail.com
