@@ -1,14 +1,14 @@
-# Supply Chain Control Tower — SQL Data Warehouse
+# Supply Chain Control Tower —SQL Data Warehouse
 
 Building a supply-chain analytics warehouse from raw data to business KPIs: **CSV → PostgreSQL staging → star schema → analysis-ready KPIs**, with a Power BI dashboard layer on top.
 
 ## Business Context
 
-Supply chain teams need a "control tower": one place to monitor orders, delays and shipping performance. Drawing on my experience in aerospace supply chain (Airbus, Toulouse), this project rebuilds that logic end-to-end on a public dataset — including the transparent, reproducible SQL layer a real BI team needs *behind* the dashboard.
+Supply chain teams need a "control tower": one place to monitor orders, delays and shipping performance. Drawing on my experience in aerospace supply chain (Airbus, Toulouse), this project rebuilds that logic end-to-end on a public dataset  including the transparent, reproducible SQL layer a real BI team needs *behind* the dashboard.
 
 ## Dataset
 
-- **DataCo Smart Supply Chain** — public dataset ([Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis))
+- **DataCo Smart Supply Chain**  public dataset ([Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis))
 - **180,519 order lines**, 53 columns: orders, customers, products, geography, shipping performance
 - The raw CSV (~95 MB) is not committed (see `.gitignore`) — download it from Kaggle into `data/raw/`
 
@@ -27,7 +27,7 @@ warehouse.*                      star schema: fact_order_items + dimensions
 analysis views & KPIs   ───►     Power BI dashboard
 ```
 
-**Why an all-TEXT staging layer?** Loading the raw file as-is guarantees ingestion never fails on a bad value. Every typing and cleaning decision then happens downstream in SQL — explicit, testable, and versioned, instead of hidden in a loader.
+**Why an all-TEXT staging layer?** Loading the raw file as-is guarantees ingestion never fails on a bad value. Every typing and cleaning decision then happens downstream in SQL  explicit, testable, and versioned, instead of hidden in a loader.
 
 ## Tech Stack
 
@@ -49,12 +49,12 @@ supply-chain-control-tower-sql/
 
 ## Roadmap
 
-- [x] **Environment** — PostgreSQL 16 in Docker, one-command setup
-- [x] **Staging layer** — raw schema + `COPY` load with LATIN1 encoding handling — **180,519 rows loaded and verified**
-- [ ] **Star schema** — `dim_date`, `dim_customer`, `dim_product`, `dim_geography`, `dim_shipping_mode`, `fact_order_items`
-- [ ] **Data quality checks** — row counts, orphan keys, duplicates
-- [ ] **KPI queries** — on-time delivery %, real vs scheduled shipping days, profitability
-- [ ] **Power BI dashboard** — delivery-performance control tower (built in parallel, will be added here)
+- [x] **Environment**  PostgreSQL 16 in Docker, one-command setup
+- [x] **Staging layer** raw schema + `COPY` load with LATIN1 encoding handling — **180,519 rows loaded and verified**
+- [ ] **Star schema**  `dim_date`, `dim_customer`, `dim_product`, `dim_geography`, `dim_shipping_mode`, `fact_order_items`
+- [ ] **Data quality checks** row counts, orphan keys, duplicates
+- [ ] **KPI queries**  on-time delivery %, real vs scheduled shipping days, profitability
+- [ ] **Power BI dashboard**  delivery-performance control tower (built in parallel, will be added here)
 
 ## How to Run
 
