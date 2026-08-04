@@ -10,7 +10,7 @@ Supply chain teams need a "control tower": one place to monitor orders, delays a
 
 - **DataCo Smart Supply Chain**  public dataset ([Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis))
 - **180,519 order lines**, 53 columns: orders, customers, products, geography, shipping performance
-- The raw CSV (~95 MB) is not committed (see `.gitignore`) — download it from Kaggle into `data/raw/`
+- The raw CSV (~95 MB) is not committed (see `.gitignore`)  download it from Kaggle into `data/raw/`
 
 ## Architecture
 
