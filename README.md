@@ -1,4 +1,4 @@
-# Supply Chain Control Tower —SQL Data Warehouse
+# Supply Chain Control Tower SQL Data Warehouse
 
 Building a supply-chain analytics warehouse from raw data to business KPIs: **CSV → PostgreSQL staging → star schema → analysis-ready KPIs**, with a Power BI dashboard layer on top.
 
